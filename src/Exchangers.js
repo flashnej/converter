@@ -20,15 +20,17 @@ function Exchangers(props) {
 
   let showValue
   if(newCurrency != "") {
-    showValue = parseFloat(props["rates"][`${newCurrency}`]) * props.quantity
+    let startingQuantity = parseFloat(props.quantity).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    let value = (parseFloat(props["rates"][`${newCurrency}`]) * props.quantity).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    showValue = `${startingQuantity} ${props.currency} is equivalent to ${value} ${newCurrency}`
   }
   let display
   if (boxes.length != 1) {
     display = <form onChange={updateCurrency}>
-      <label> How many
+      <label> Convert to:
       <select id="currency" className="newCurrency">
         {boxes}
-      </select> is that?
+      </select>
       </label>
     </form>
   }

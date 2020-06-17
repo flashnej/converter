@@ -1,13 +1,19 @@
 .body {
-  background-color: green;
+  background-color: #d2e3ca;
+  font-family: 'Poppins', sans-serif;
+}
+
+.body h1 {
+  font-size: 3em;
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
   margin: 6rem 0;
-  line-height: 40px;
+  line-height: 100px;
   font-size: 32px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .numberInput {
@@ -30,5 +36,4 @@
 
 .result {
   margin-top: 100px;
-  background-color: white;
 }

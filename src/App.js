@@ -85,10 +85,11 @@ function App() {
 
   return (
     <div className="App">
+    <h1> Currency Converter </h1>
             <form onSubmit={onSubmit}>
 
                       <label>
-                            I have
+                            Starting with: 
                             <input
                             className="numberInput"
                             type="number"
