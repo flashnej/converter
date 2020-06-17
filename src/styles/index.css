@@ -1,5 +1,34 @@
+.body {
+  background-color: green;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
   margin: 6rem 0;
+  line-height: 40px;
+  font-size: 32px;
+}
+
+.numberInput {
+  width: 80px;
+  font-size: 32px;
+}
+
+
+.startingCurrency {
+  font-size: 32px;
+}
+
+.button {
+  font-size: 32px;
+}
+
+.newCurrency {
+  font-size: 32px;
+}
+
+.result {
+  margin-top: 100px;
+  background-color: white;
 }
