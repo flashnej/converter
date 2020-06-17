@@ -5,11 +5,21 @@ import Exchangers from './Exchangers.js'
 
 function App() {
   const [quantity, setQuantity] = useState('');
-  const [currency, setCurrency] = useState('');
+  const [currency, setCurrency] = useState('USD');
   const [exchange, setExchange] = useState({currency: "none"})
 
   const onSubmit = (event) => {
     event.preventDefault()
+
+  }
+
+  const handleChange = (event) => {
+    event.preventDefault()
+    if(event.currentTarget.id === "quantity") {
+      setQuantity(event.currentTarget.value)
+    } else if (event.currentTarget.id === "currency") {
+      setCurrency(event.currentTarget.value)
+    }
     if (currency === "USD") {
       fetch('https://api.exchangerate-api.com/v4/latest/USD')
       .then((response) => {
@@ -69,15 +79,6 @@ function App() {
     }
   }
 
-  const handleChange = (event) => {
-    event.preventDefault()
-    if(event.currentTarget.id === "quantity") {
-      setQuantity(event.currentTarget.value)
-    } else if (event.currentTarget.id === "currency") {
-      setCurrency(event.currentTarget.value)
-    }
-  }
-
   let value = "None yet"
   if (exchange.base) {
     value = exchange.rates.EUR
@@ -100,14 +101,12 @@ function App() {
                       </label>
                       <label>
                             <select id="currency" onChange={handleChange} className="startingCurrency">
-                              <option value=""></option>
                               <option value="USD">USD</option>
                               <option value="EU">EU</option>
                               <option value="INR">INR</option>
                               <option value="CAD">CAD</option>
                             </select>
                       </label>
-                      <input className="button" type="submit" value="Submit" />
             </form>
             <Exchangers
             currency={currency}
