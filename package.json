@@ -1,5 +1,6 @@
 {
   "name": "converter",
+  "homepage": "https://flashnej.github.io/converter/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
