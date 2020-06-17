@@ -19,19 +19,23 @@
 .numberInput {
   width: 80px;
   font-size: 32px;
+  margin-left: 12px;
 }
 
 
 .startingCurrency {
   font-size: 32px;
+  margin-left: 12px;
 }
 
 .button {
   font-size: 32px;
+  margin-left: 12px;
 }
 
 .newCurrency {
   font-size: 32px;
+  margin-left: 12px;
 }
 
 .result {

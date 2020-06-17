@@ -89,7 +89,7 @@ function App() {
             <form onSubmit={onSubmit}>
 
                       <label>
-                            Starting with: 
+                            Convert:
                             <input
                             className="numberInput"
                             type="number"

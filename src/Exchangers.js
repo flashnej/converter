@@ -27,7 +27,7 @@ function Exchangers(props) {
   let display
   if (boxes.length != 1) {
     display = <form onChange={updateCurrency}>
-      <label> Convert to:
+      <label> To:
       <select id="currency" className="newCurrency">
         {boxes}
       </select>
