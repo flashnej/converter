@@ -10,16 +10,6 @@ function App() {
 
   const onSubmit = (event) => {
     event.preventDefault()
-
-  }
-
-  const handleChange = (event) => {
-    event.preventDefault()
-    if(event.currentTarget.id === "quantity") {
-      setQuantity(event.currentTarget.value)
-    } else if (event.currentTarget.id === "currency") {
-      setCurrency(event.currentTarget.value)
-    }
     if (currency === "USD") {
       fetch('https://api.exchangerate-api.com/v4/latest/USD')
       .then((response) => {
@@ -79,6 +69,15 @@ function App() {
     }
   }
 
+  const handleChange = (event) => {
+    event.preventDefault()
+    if(event.currentTarget.id === "quantity") {
+      setQuantity(event.currentTarget.value)
+    } else if (event.currentTarget.id === "currency") {
+      setCurrency(event.currentTarget.value)
+    }
+  }
+
   let value = "None yet"
   if (exchange.base) {
     value = exchange.rates.EUR
@@ -107,6 +106,7 @@ function App() {
                               <option value="CAD">CAD</option>
                             </select>
                       </label>
+                      <input className="button" type="submit" id="submit" value="Submit" />
             </form>
             <Exchangers
             currency={currency}
